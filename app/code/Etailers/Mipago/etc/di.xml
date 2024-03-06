@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Etailers\Mipago\Model\MipagoPaymentInterface" type="Etailers\Mipago\Model\Method\Mipago"/>
+    <preference for="Etailers\Mipago\Api\PaymentMethodListInterface" type="Etailers\Mipago\Model\PaymentMethodList" />
+
+    <!-- Payment Method configuration -->
+    <type name="Etailers\Mipago\Model\Method\Mipago">
+        <arguments>
+            <argument name="config" xsi:type="object">Magento\Payment\Gateway\Config\Config</argument>
+            <argument name="valueHandlerPool" xsi:type="object">MipagoPaymentValueHandlerPool</argument>
+            <!--argument name="vaultProvider" xsi:type="object">Magento\Vault\Model\Method\NullPaymentProvider</argument-->
+            <argument name="code" xsi:type="string">mipago</argument>
+        </arguments>
+    </type>
+    <!-- @api create virtual type based on default value handler pool if it required by payment method -->
+    <virtualType name="MipagoPaymentValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">MipagoPaymentDefaultValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- @api create virtual type based on default value handler if it required by payment method -->
+    <virtualType name="MipagoPaymentDefaultValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">Magento\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+</config>

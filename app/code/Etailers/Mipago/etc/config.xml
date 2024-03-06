@@ -5,7 +5,8 @@
         <payment>
             <mipago>
                 <active>1</active>
-                <model>Etailers\Mipago\Model\Mipago</model>
+                <debug>1</debug>
+                <model>Etailers\Mipago\Model\MipagoPaymentInterface</model>
                 <order_status>pending</order_status>
                 <title>Mi Pago</title>
                 <allowspecific>0</allowspecific>
