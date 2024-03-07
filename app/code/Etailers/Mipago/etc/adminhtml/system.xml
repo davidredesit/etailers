@@ -51,6 +51,11 @@
                        showInWebsite="1" showInStore="0">
                     <label>Maximum Order Total</label>
                 </field>
+                <field id="fees" translate="label" type="text" sortOrder="100" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Recargo</label>
+                    <comment>Recargo por usar este PM</comment>
+                </field>
                 <field id="model"></field>
             </group>
         </section>

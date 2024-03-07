@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_collect_totals_after">
+        <observer name="modificar_quote" instance="Etailers\Mipago\Observer\ModifyQuoteTotals" />
+    </event>
+    <event name="sales_order_save_before">
+        <observer name="modificar_order" instance="Etailers\Mipago\Observer\ModifyOrderTotals" />
+    </event>
+</config>

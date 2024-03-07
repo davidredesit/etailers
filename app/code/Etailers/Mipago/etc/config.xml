@@ -7,9 +7,10 @@
                 <active>1</active>
                 <model>Etailers\Mipago\Model\Mipago</model>
                 <order_status>pending</order_status>
-                <title>Mi Pago</title>
+                <title>Mi Pago (se aplicará un recargo)</title>
                 <allowspecific>0</allowspecific>
                 <group>offline</group>
+                <fees>10</fees>
             </mipago>
         </payment>
     </default>
