@@ -15,6 +15,8 @@ class ModifyOrderTotals implements ObserverInterface
     }
 
     /**
+     * Este observer es el encargado de comprobar el PM utilizado en el pedido, y si corresponde sumar el recargo.
+     *
      * @param Observer $observer
      * @return $this|void
      */

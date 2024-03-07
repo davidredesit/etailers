@@ -6,7 +6,7 @@
 namespace Etailers\Mipago\Model;
 
 /**
- *
+ * Inicialización del offline PM
  */
 class Mipago extends \Magento\Payment\Model\Method\AbstractMethod
 {

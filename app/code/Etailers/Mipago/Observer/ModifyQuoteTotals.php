@@ -13,6 +13,12 @@ class ModifyQuoteTotals implements ObserverInterface
     ) {
     }
 
+    /**
+     * Este observer es el encargado de comprobar el PM utilizado en el carrito, y si corresponde sumar el recargo.
+     *
+     * @param Observer $observer
+     * @return $this|void
+     */
     public function execute(Observer $observer)
     {
         $quote = $observer->getQuote();
